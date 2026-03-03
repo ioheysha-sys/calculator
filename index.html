@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calulator</title>
+    <link rel="stylesheet" href="calc.css">
+</head>
+<body>
+    <div class="calc">
+        <input type="text" id="display">
+        <div class="btnContainer">
+            <input type="button" class="function" value="AC" onclick="allClear()">
+            <input type="button" class="function" value="SQ" onclick="sq()">
+            <input type="button" class="function" value="DEL" onclick="del()">
+            <input type="button" class="op btns" value="/">
+
+            <input type="button" class="btns num" value="7">
+            <input type="button" class="btns num" value="8">
+            <input type="button" class="btns num" value="9">
+            <input type="button" class="op btns" value="*">
+
+            <input type="button" class="btns num" value="4">
+            <input type="button" class="btns num" value="5">
+            <input type="button" class="btns num" value="6">
+            <input type="button" class="op btns" value="-">
+
+            <input type="button" class="btns num" value="1">
+            <input type="button" class="btns num" value="2">
+            <input type="button" class="btns num" value="3">
+            <input type="button" class="op btns" value="+">
+
+            <input type="button" class="btns num" value="0">
+            <input type="button" class="btns num" value=".">
+            <input type="button" class="op" value="=" onclick="equal()">
+            
+        </div>
+    </div>
+</body>
+<script src="calc.js"></script>
+</html>
