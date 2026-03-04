@@ -2,44 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+
+  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
     <title>Calculator</title>
     <link rel="stylesheet" href="calc.css">
 </head>
-<body class="light">
-
-<!-- Theme Toggle Button -->
-<div class="theme-toggle">
-    <button onclick="toggleTheme()">🌙</button>
-</div>
+<body>
 
 <div class="calc">
 
     <input type="text" id="display" readonly>
 
     <div class="btnContainer">
-        <input type="button" class="function" value="AC" onclick="allClear()">
-        <input type="button" class="function" value="SQ" onclick="square()">
-        <input type="button" class="function" value="DEL" onclick="del()">
-        <input type="button" class="op" value="/" onclick="append('/')">
+        <button class="function" onclick="allClear()">AC</button>
+        <button class="function" onclick="del()">DEL</button>
+        <button class="function" onclick="square()">SQ</button>
+        <button class="op" onclick="append('/')">÷</button>
 
-        <input type="button" class="num" value="7" onclick="append('7')">
-        <input type="button" class="num" value="8" onclick="append('8')">
-        <input type="button" class="num" value="9" onclick="append('9')">
-        <input type="button" class="op" value="*" onclick="append('*')">
+        <button class="num" onclick="append('7')">7</button>
+        <button class="num" onclick="append('8')">8</button>
+        <button class="num" onclick="append('9')">9</button>
+        <button class="op" onclick="append('*')">×</button>
 
-        <input type="button" class="num" value="4" onclick="append('4')">
-        <input type="button" class="num" value="5" onclick="append('5')">
-        <input type="button" class="num" value="6" onclick="append('6')">
-        <input type="button" class="op" value="-" onclick="append('-')">
+        <button class="num" onclick="append('4')">4</button>
+        <button class="num" onclick="append('5')">5</button>
+        <button class="num" onclick="append('6')">6</button>
+        <button class="op" onclick="append('-')">−</button>
 
-        <input type="button" class="num" value="1" onclick="append('1')">
-        <input type="button" class="num" value="2" onclick="append('2')">
-        <input type="button" class="num" value="3" onclick="append('3')">
-        <input type="button" class="op" value="+" onclick="append('+')">
+        <button class="num" onclick="append('1')">1</button>
+        <button class="num" onclick="append('2')">2</button>
+        <button class="num" onclick="append('3')">3</button>
+        <button class="op" onclick="append('+')">+</button>
 
-        <input type="button" class="num" value="0" onclick="append('0')">
-        <input type="button" class="num" value="." onclick="append('.')">
-        <input type="button" class="op" value="=" onclick="equal()">
+        <button class="num zero" onclick="append('0')">0</button>
+        <button class="num" onclick="append('.')">.</button>
+        <button class="op" onclick="equal()">=</button>
     </div>
 
 </div>
