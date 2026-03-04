@@ -25,14 +25,3 @@ function square(){
         display.value = eval(display.value) ** 2;
     }
 }
-
-/* Toggle Theme */
-function toggleTheme(){
-    if(document.body.classList.contains("light")){
-        document.body.classList.remove("light");
-        document.body.classList.add("dark");
-    } else {
-        document.body.classList.remove("dark");
-        document.body.classList.add("light");
-    }
-}
