@@ -1,21 +1,38 @@
-let btns = document.querySelectorAll('.btns')
+let display = document.getElementById("display");
 
-// console.log(btns)
+function append(value){
+    display.value += value;
+}
 
-let display = document.getElementById('display')
+function allClear(){
+    display.value = "";
+}
 
-// console.log(display)
+function del(){
+    display.value = display.value.slice(0,-1);
+}
 
-btns.forEach( btn=>{
-    btn.addEventListener('click' , ()=>{
-        display.value += btn.value;
-    })
-})
+function equal(){
+    try{
+        display.value = eval(display.value);
+    }catch{
+        display.value = "Error";
+    }
+}
 
-let equal = ()=> display.value = eval(display.value)
+function square(){
+    if(display.value !== ""){
+        display.value = eval(display.value) ** 2;
+    }
+}
 
-let allClear = ()=> display.value=''
-
-let sq =() =>display.value=display.value**2
-
-let del = () => display.value = display.value.slice(0,-1)
+/* Toggle Theme */
+function toggleTheme(){
+    if(document.body.classList.contains("light")){
+        document.body.classList.remove("light");
+        document.body.classList.add("dark");
+    } else {
+        document.body.classList.remove("dark");
+        document.body.classList.add("light");
+    }
+}
