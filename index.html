@@ -2,40 +2,48 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calulator</title>
+    <title>Calculator</title>
     <link rel="stylesheet" href="calc.css">
 </head>
-<body>
-    <div class="calc">
-        <input type="text" id="display">
-        <div class="btnContainer">
-            <input type="button" class="function" value="AC" onclick="allClear()">
-            <input type="button" class="function" value="SQ" onclick="sq()">
-            <input type="button" class="function" value="DEL" onclick="del()">
-            <input type="button" class="op btns" value="/">
+<body class="light">
 
-            <input type="button" class="btns num" value="7">
-            <input type="button" class="btns num" value="8">
-            <input type="button" class="btns num" value="9">
-            <input type="button" class="op btns" value="*">
+<!-- Theme Toggle Button -->
+<div class="theme-toggle">
+    <button onclick="toggleTheme()">🌙</button>
+</div>
 
-            <input type="button" class="btns num" value="4">
-            <input type="button" class="btns num" value="5">
-            <input type="button" class="btns num" value="6">
-            <input type="button" class="op btns" value="-">
+<div class="calc">
 
-            <input type="button" class="btns num" value="1">
-            <input type="button" class="btns num" value="2">
-            <input type="button" class="btns num" value="3">
-            <input type="button" class="op btns" value="+">
+    <input type="text" id="display" readonly>
 
-            <input type="button" class="btns num" value="0">
-            <input type="button" class="btns num" value=".">
-            <input type="button" class="op" value="=" onclick="equal()">
-            
-        </div>
+    <div class="btnContainer">
+        <input type="button" class="function" value="AC" onclick="allClear()">
+        <input type="button" class="function" value="SQ" onclick="square()">
+        <input type="button" class="function" value="DEL" onclick="del()">
+        <input type="button" class="op" value="/" onclick="append('/')">
+
+        <input type="button" class="num" value="7" onclick="append('7')">
+        <input type="button" class="num" value="8" onclick="append('8')">
+        <input type="button" class="num" value="9" onclick="append('9')">
+        <input type="button" class="op" value="*" onclick="append('*')">
+
+        <input type="button" class="num" value="4" onclick="append('4')">
+        <input type="button" class="num" value="5" onclick="append('5')">
+        <input type="button" class="num" value="6" onclick="append('6')">
+        <input type="button" class="op" value="-" onclick="append('-')">
+
+        <input type="button" class="num" value="1" onclick="append('1')">
+        <input type="button" class="num" value="2" onclick="append('2')">
+        <input type="button" class="num" value="3" onclick="append('3')">
+        <input type="button" class="op" value="+" onclick="append('+')">
+
+        <input type="button" class="num" value="0" onclick="append('0')">
+        <input type="button" class="num" value="." onclick="append('.')">
+        <input type="button" class="op" value="=" onclick="equal()">
     </div>
-</body>
+
+</div>
+
 <script src="calc.js"></script>
+</body>
 </html>
