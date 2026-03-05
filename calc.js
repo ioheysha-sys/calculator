@@ -1,51 +1,52 @@
-let display = document.getElementById("display");
-let themeBtn = document.getElementById("themeBtn");
+let expression = document.getElementById("expression");
+let result = document.getElementById("result");
+let current = "";
 
-// Button Click Handling (IMPORTANT FIX)
-document.querySelectorAll("button").forEach(button => {
-    button.addEventListener("click", () => {
+/* 🔊 Sound */
+let clickSound = new Audio("click.mp3");
 
-        let value = button.getAttribute("data-value");
-        let action = button.getAttribute("data-action");
+document.querySelectorAll(".btn").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+
+        // 🔊 Play sound
+        clickSound.currentTime = 0;
+        clickSound.play();
+
+        let value = btn.getAttribute("data-value");
+        let action = btn.getAttribute("data-action");
 
         if(value){
-            display.value += value;
+            current += value;
+            expression.textContent = current;
         }
 
         if(action === "clear"){
-            display.value = "";
+            current = "";
+            expression.textContent = "";
+            result.textContent = "0";
         }
 
         if(action === "delete"){
-            display.value = display.value.slice(0,-1);
+            current = current.slice(0,-1);
+            expression.textContent = current;
         }
 
         if(action === "equal"){
             try{
-                display.value = Function("return " + display.value)();
+                let calc = eval(current);
+                result.textContent = calc;
+                current = calc.toString();
             }catch{
-                display.value = "Error";
+                result.textContent = "Error";
             }
         }
-
-        if(action === "square"){
-            if(display.value !== ""){
-                display.value = Math.pow(Number(display.value), 2);
-            }
-        }
-
     });
 });
 
-// Theme Toggle
-themeBtn.addEventListener("click", () => {
+/* Theme Toggle */
+let toggle = document.getElementById("themeToggle");
+
+toggle.addEventListener("click", ()=>{
+    document.body.classList.toggle("dark");
     document.body.classList.toggle("light");
-
-    let icon = document.getElementById("toggleIcon");
-
-    if(document.body.classList.contains("light")){
-        icon.textContent = "☀️";
-    }else{
-        icon.textContent = "🌙";
-    }
 });
