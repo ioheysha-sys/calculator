@@ -1,54 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-    <title>Calculator</title>
-    <link rel="stylesheet" href="calc.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Android Calculator</title>
+<link rel="stylesheet" href="calc.css">
 </head>
-<body>
+<body class="dark">
 
-<div class="calc">
+<div class="top-bar">
+    <div class="theme-toggle" id="themeToggle">
+        <div class="circle"></div>
+    </div>
+</div>
 
-    <!-- Top Bar -->
-    <div class="topBar">
-       
-    
+<div class="calculator">
 
-        <div class="themeToggle" id="themeBtn">
-            <div class="toggleCircle">
-                <span id="toggleIcon">🌙</span>
-            </div>
-        </div>
+    <div class="display-area">
+        <div id="expression"></div>
+        <div id="result">0</div>
     </div>
 
-    <input type="text" id="display" readonly>
+    <div class="keypad">
 
-    <div class="btnContainer">
+        <button class="btn clear" data-action="clear">FC</button>
+        <button class="btn operator" data-value="%">%</button>
+        <button class="btn operator" data-action="delete">DEL</button>
+        <button class="btn operator" data-value="/">÷</button>
 
-        <button class="function" data-action="clear">AC</button>
-        <button class="function" data-action="delete">DEL</button>
-        <button class="function" data-action="square">SQ</button>
-        <button class="op" data-value="/">÷</button>
+        <button class="btn num" data-value="7">7</button>
+        <button class="btn num" data-value="8">8</button>
+        <button class="btn num" data-value="9">9</button>
+        <button class="btn operator" data-value="+">+</button>
+      
 
-        <button class="num" data-value="7">7</button>
-        <button class="num" data-value="8">8</button>
-        <button class="num" data-value="9">9</button>
-        <button class="op" data-value="*">×</button>
+        <button class="btn num" data-value="4">4</button>
+        <button class="btn num" data-value="5">5</button>
+        <button class="btn num" data-value="6">6</button>
+        <button class="btn operator" data-value="-">−</button>
 
-        <button class="num" data-value="4">4</button>
-        <button class="num" data-value="5">5</button>
-        <button class="num" data-value="6">6</button>
-        <button class="op" data-value="-">−</button>
+        <button class="btn num" data-value="1">1</button>
+        <button class="btn num" data-value="2">2</button>
+        <button class="btn num" data-value="3">3</button>
+          <button class="btn operator" data-value="*">×</button>
 
-        <button class="num" data-value="1">1</button>
-        <button class="num" data-value="2">2</button>
-        <button class="num" data-value="3">3</button>
-        <button class="op" data-value="+">+</button>
-
-        <button class="num zero" data-value="0">0</button>
-        <button class="num" data-value=".">.</button>
-        <button class="op" data-action="equal">=</button>
+         <button class="btn num" data-value="0"></button>
+        <button class="btn num" data-value="0">0</button>
+        <button class="btn num" data-value=".">.</button>
+        <button class="btn equal" data-action="equal">=</button>
 
     </div>
 
