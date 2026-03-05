@@ -25,3 +25,15 @@ function square(){
         display.value = eval(display.value) ** 2;
     }
 }
+
+function toggleTheme(){
+    document.body.classList.toggle("light");
+
+    let icon = document.getElementById("toggleIcon");
+
+    if(document.body.classList.contains("light")){
+        icon.textContent = "☀️";
+    }else{
+        icon.textContent = "🌙";
+    }
+}
