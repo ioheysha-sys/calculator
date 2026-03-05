@@ -2,10 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-  
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-
     <title>Calculator</title>
     <link rel="stylesheet" href="calc.css">
 </head>
@@ -13,10 +10,30 @@
 
 <div class="calc">
 
+    <!-- Top Bar -->
+    <div class="topBar">
+        <!-- Image -->
+        <img id="cat" src="image.png" alt="logo" class="logo">
+
+        <!-- Theme Toggle -->
+        <div class="themeToggle" onclick="toggleTheme()">
+            <div class="toggleCircle">
+                <span id="toggleIcon">🌙</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Display -->
     <input type="text" id="display" readonly>
 
+    <!-- Buttons -->
     <div class="btnContainer">
-        <button class="function" onclick="allClear()">AC</button>
+
+        <!-- AC Button with PNG -->
+        <button class="function iconBtn" onclick="allClear()">
+            <img src="image copy.png" alt="AC">
+        </button>
+
         <button class="function" onclick="del()">DEL</button>
         <button class="function" onclick="square()">SQ</button>
         <button class="op" onclick="append('/')">÷</button>
