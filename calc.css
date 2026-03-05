@@ -43,12 +43,7 @@ body{
     margin-bottom: 15px;
 }
 
-#cat{
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    border: 2px solid #ff9500;
-}
+
 
 .themeToggle{
     width: 65px;
