@@ -2,15 +2,8 @@ let expression = document.getElementById("expression");
 let result = document.getElementById("result");
 let current = "";
 
-/* 🔊 Sound */
-let clickSound = new Audio("click.mp3");
-
 document.querySelectorAll(".btn").forEach(btn=>{
     btn.addEventListener("click", ()=>{
-
-        // 🔊 Play sound
-        clickSound.currentTime = 0;
-        clickSound.play();
 
         let value = btn.getAttribute("data-value");
         let action = btn.getAttribute("data-action");
@@ -18,12 +11,6 @@ document.querySelectorAll(".btn").forEach(btn=>{
         if(value){
             current += value;
             expression.textContent = current;
-        }
-
-        if(action === "clear"){
-            current = "";
-            expression.textContent = "";
-            result.textContent = "0";
         }
 
         if(action === "delete"){
