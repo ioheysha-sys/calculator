@@ -7,74 +7,200 @@
 html, body{
     height: 100%;
     width: 100%;
-    background: black;
     font-family: Arial, sans-serif;
 }
 
-
-.calc{
-    height: 100dvh; /* modern mobile height fix */
+/* Center on desktop */
+body{
     display: flex;
-    flex-direction: column;
-    padding: env(safe-area-inset-top) 20px 
-             env(safe-area-inset-bottom);
+    justify-content: center;
+    align-items: center;
+    background: black;
+    transition: background 0.3s ease;
 }
 
+/* Calculator Container */
+.calc{
+    width: 100%;
+    max-width: 380px;
+    height: 100dvh;
+    max-height: 750px;
+    background: black;
+    border-radius: 35px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 40px rgba(0,0,0,0.6);
+    transition: 0.3s ease;
+}
 
+/* Top Bar */
+.topBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* Logo Image */
+#cat{
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid #ff9500;
+    padding: 3px;
+    box-shadow: 0 0 10px rgba(255,149,0,0.6);
+    transition: 0.3s;
+}
+
+/* Theme Toggle */
+.themeToggle{
+    width: 65px;
+    height: 35px;
+    background: #1e1e1e;
+    border-radius: 50px;
+    padding: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.toggleCircle{
+    width: 27px;
+    height: 27px;
+    background: #ff9500;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+/* Display */
 #display{
     flex: 1;
-    width: 100%;
     background: transparent;
     border: none;
     outline: none;
     color: white;
-    font-size: clamp(28px, 6vw, 45px);
+    font-size: 42px;
     text-align: right;
-    display: flex;
-    align-items: flex-end;
-    justify-content: flex-end;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
+    transition: 0.3s;
 }
 
-
+/* Buttons Grid */
 .btnContainer{
     flex: 2;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
+    gap: 15px;
 }
 
-
+/* Base Button */
 button{
     border: none;
     border-radius: 50%;
-    font-size: clamp(16px, 5vw, 24px);
+    font-size: 22px;
     cursor: pointer;
-    transition: 0.15s;
+    transition: 0.15s ease;
+      
+
 }
 
 button:active{
-    transform: scale(0.92);
+    transform: scale(0.9);
 }
 
-
+/* Zero Button */
 .zero{
     grid-column: span 2;
-    border-radius: 40px;
+    border-radius: 50px;
 }
 
-
+/* Number Buttons */
 .num{
     background:#2c2c2c;
     color:white;
 }
 
+/* Operator Buttons */
 .op{
     background:#ff9500;
     color:white;
-} 
+    box-shadow: 0 0 8px rgba(255,149,0,0.4);
+}
 
+/* Function Buttons */
 .function{
     background:#5f5f5f;
     color:white;
+}
+
+/* AC PNG Button */
+.iconBtn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iconBtn img{
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    pointer-events: none;
+}
+
+/* Hover effect (desktop only) */
+@media (hover:hover){
+    button:hover{
+        opacity: 0.85;
+    }
+}
+
+/* ========================= */
+/* LIGHT THEME */
+/* ========================= */
+
+body.light{
+    background: #f2f2f2;
+}
+
+body.light .calc{
+    background: #ffffff;
+}
+
+body.light #display{
+    color: black;
+}
+
+body.light .num{
+    background: #e0e0e0;
+    color: black;
+}
+
+body.light .function{
+    background: #cfcfcf;
+    color: black;
+}
+
+body.light .op{
+    background: #ff9500;
+    color: white;
+}
+
+body.light .themeToggle{
+    background: #ddd;
+}
+
+body.light .toggleCircle{
+    transform: translateX(30px);
+}
+
+body.light #cat{
+    border: 2px solid #ff9500;
+    box-shadow: 0 0 10px rgba(255,149,0,0.4);
 }
