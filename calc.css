@@ -14,53 +14,52 @@ body{
     transition:0.3s;
 }
 
-
+/* DARK MODE */
 body.dark{
     background:#000;
     color:#fff;
 }
 
-
+/* LIGHT MODE */
 body.light{
     background:#f2f2f2;
     color:#000;
 }
 
 .top-bar{
-    height:0px;
+    height:60px;
     display:flex;
     align-items:center;
+    justify-content:flex-end;
     padding:15px;
 }
 
 .theme-toggle{
-    width:20px;
-    height:20px;
+    width:50px;
+    height:24px;
     background:#222;
-    border-radius:40px;
+    border-radius:20px;
     position:relative;
     cursor:pointer;
-    transition:0.3s;
 }
 
 .circle{
-    width:20px;
-    height:20px;
-    background:rgb(233, 246, 95);
+    width:18px;
+    height:18px;
+    background:rgb(233,246,95);
     border-radius:50%;
     position:absolute;
     top:3px;
-    left:4px;
+    left:3px;
     transition:0.3s;
 }
-
 
 body.light .theme-toggle{
     background:#ccc;
 }
 
 body.light .circle{
-    left:50px;
+    transform: translateX(26px);
     background:#333;
 }
 
@@ -71,7 +70,7 @@ body.light .circle{
 }
 
 .display-area{
-    height:35vh;
+    height:30vh;
     padding:20px;
     display:flex;
     flex-direction:column;
@@ -80,7 +79,7 @@ body.light .circle{
 }
 
 #expression{
-    font-size:20px;
+    font-size:18px;
     opacity:0.7;
 }
 
@@ -106,18 +105,18 @@ body.light .circle{
     transition:0.15s;
 }
 
+.btn:active{
+    transform:scale(0.95);
+}
 
+/* DARK BUTTONS */
 body.dark .btn{
     background:#1e1e1e;
     color:#fff;
 }
 
 body.dark .operator{
-    color:rgb(233, 246, 95);
-}
-
-body.dark .clear{
-    color:#ff4d4d;
+    color:rgb(233,246,95);
 }
 
 body.dark .equal{
@@ -125,7 +124,7 @@ body.dark .equal{
     color:#fff;
 }
 
-
+/* LIGHT BUTTONS */
 body.light .btn{
     background:#fff;
     color:#000;
@@ -135,15 +134,11 @@ body.light .operator{
     color:#0aa84f;
 }
 
-body.light .clear{
-    color:#ff0000;
-}
-
 body.light .equal{
     background:#0aa84f;
     color:#fff;
 }
 
-.btn:active{
-    transform:scale(0.95);
+.zero{
+    grid-column:span 2;
 }
