@@ -21,13 +21,13 @@ document.querySelectorAll(".btn").forEach(btn=>{
             result.textContent = "0";
         }
 
-        /* DELETE */
+      
         if(action === "delete"){
             current = current.slice(0,-1);
             updateDisplay();
         }
 
-        /* EQUAL */
+   
         if(action === "equal"){
             calculateFinal();
         }
@@ -35,7 +35,7 @@ document.querySelectorAll(".btn").forEach(btn=>{
     });
 });
 
-/* LIVE UPDATE FUNCTION */
+
 function updateDisplay(){
     expression.textContent = current;
 
@@ -50,7 +50,7 @@ function updateDisplay(){
     }
 }
 
-/* FINAL CALCULATION */
+
 function calculateFinal(){
     try{
         let calc = eval(current);
@@ -62,7 +62,7 @@ function calculateFinal(){
     }
 }
 
-/* THEME TOGGLE */
+
 let toggle = document.getElementById("themeToggle");
 
 toggle.addEventListener("click", ()=>{
