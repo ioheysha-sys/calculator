@@ -12,50 +12,44 @@
 
     <!-- Top Bar -->
     <div class="topBar">
-        <!-- Image -->
-        <img id="cat" src="image.png" alt="logo" class="logo">
+        <!-- ✅ PNG FIX (make sure file is in same folder) -->
+        <img id="cat" src="./homecat.png" alt="logo">
 
-        <!-- Theme Toggle -->
-        <div class="themeToggle" onclick="toggleTheme()">
+        <div class="themeToggle" id="themeBtn">
             <div class="toggleCircle">
                 <span id="toggleIcon">🌙</span>
             </div>
         </div>
     </div>
 
-    <!-- Display -->
     <input type="text" id="display" readonly>
 
-    <!-- Buttons -->
     <div class="btnContainer">
 
-        <!-- AC Button with PNG -->
-        <button class="function iconBtn" onclick="allClear()">
-            <img src="image copy.png" alt="AC">
-        </button>
+        <button class="function" data-action="clear">AC</button>
+        <button class="function" data-action="delete">DEL</button>
+        <button class="function" data-action="square">SQ</button>
+        <button class="op" data-value="/">÷</button>
 
-        <button class="function" onclick="del()">DEL</button>
-        <button class="function" onclick="square()">SQ</button>
-        <button class="op" onclick="append('/')">÷</button>
+        <button class="num" data-value="7">7</button>
+        <button class="num" data-value="8">8</button>
+        <button class="num" data-value="9">9</button>
+        <button class="op" data-value="*">×</button>
 
-        <button class="num" onclick="append('7')">7</button>
-        <button class="num" onclick="append('8')">8</button>
-        <button class="num" onclick="append('9')">9</button>
-        <button class="op" onclick="append('*')">×</button>
+        <button class="num" data-value="4">4</button>
+        <button class="num" data-value="5">5</button>
+        <button class="num" data-value="6">6</button>
+        <button class="op" data-value="-">−</button>
 
-        <button class="num" onclick="append('4')">4</button>
-        <button class="num" onclick="append('5')">5</button>
-        <button class="num" onclick="append('6')">6</button>
-        <button class="op" onclick="append('-')">−</button>
+        <button class="num" data-value="1">1</button>
+        <button class="num" data-value="2">2</button>
+        <button class="num" data-value="3">3</button>
+        <button class="op" data-value="+">+</button>
 
-        <button class="num" onclick="append('1')">1</button>
-        <button class="num" onclick="append('2')">2</button>
-        <button class="num" onclick="append('3')">3</button>
-        <button class="op" onclick="append('+')">+</button>
+        <button class="num zero" data-value="0">0</button>
+        <button class="num" data-value=".">.</button>
+        <button class="op" data-action="equal">=</button>
 
-        <button class="num zero" onclick="append('0')">0</button>
-        <button class="num" onclick="append('.')">.</button>
-        <button class="op" onclick="equal()">=</button>
     </div>
 
 </div>
