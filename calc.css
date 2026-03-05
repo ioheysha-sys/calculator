@@ -1,52 +1,149 @@
-let expression = document.getElementById("expression");
-let result = document.getElementById("result");
-let current = "";
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+    -webkit-tap-highlight-color:transparent;
+}
 
-/* 🔊 Sound */
-let clickSound = new Audio("click.mp3");
+body{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    transition:0.3s;
+}
 
-document.querySelectorAll(".btn").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
 
-        // 🔊 Play sound
-        clickSound.currentTime = 0;
-        clickSound.play();
+body.dark{
+    background:#000;
+    color:#fff;
+}
 
-        let value = btn.getAttribute("data-value");
-        let action = btn.getAttribute("data-action");
 
-        if(value){
-            current += value;
-            expression.textContent = current;
-        }
+body.light{
+    background:#f2f2f2;
+    color:#000;
+}
 
-        if(action === "clear"){
-            current = "";
-            expression.textContent = "";
-            result.textContent = "0";
-        }
+.top-bar{
+    height:0px;
+    display:flex;
+    align-items:center;
+    padding:15px;
+}
 
-        if(action === "delete"){
-            current = current.slice(0,-1);
-            expression.textContent = current;
-        }
+.theme-toggle{
+    width:20px;
+    height:20px;
+    background:#222;
+    border-radius:40px;
+    position:relative;
+    cursor:pointer;
+    transition:0.3s;
+}
 
-        if(action === "equal"){
-            try{
-                let calc = eval(current);
-                result.textContent = calc;
-                current = calc.toString();
-            }catch{
-                result.textContent = "Error";
-            }
-        }
-    });
-});
+.circle{
+    width:20px;
+    height:20px;
+    background:rgb(233, 246, 95);
+    border-radius:50%;
+    position:absolute;
+    top:3px;
+    left:4px;
+    transition:0.3s;
+}
 
-/* Theme Toggle */
-let toggle = document.getElementById("themeToggle");
 
-toggle.addEventListener("click", ()=>{
-    document.body.classList.toggle("dark");
-    document.body.classList.toggle("light");
-});
+body.light .theme-toggle{
+    background:#ccc;
+}
+
+body.light .circle{
+    left:50px;
+    background:#333;
+}
+
+.calculator{
+    width:100%;
+    max-width:420px;
+    margin:auto;
+}
+
+.display-area{
+    height:35vh;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+    align-items:flex-end;
+}
+
+#expression{
+    font-size:20px;
+    opacity:0.7;
+}
+
+#result{
+    font-size:48px;
+    margin-top:10px;
+    overflow-x:auto;
+}
+
+.keypad{
+    padding:20px;
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:15px;
+}
+
+.btn{
+    height:65px;
+    border:none;
+    border-radius:15px;
+    font-size:24px;
+    cursor:pointer;
+    transition:0.15s;
+}
+
+
+body.dark .btn{
+    background:#1e1e1e;
+    color:#fff;
+}
+
+body.dark .operator{
+    color:rgb(233, 246, 95);
+}
+
+body.dark .clear{
+    color:#ff4d4d;
+}
+
+body.dark .equal{
+    background:#32d17d;
+    color:#fff;
+}
+
+
+body.light .btn{
+    background:#fff;
+    color:#000;
+}
+
+body.light .operator{
+    color:#0aa84f;
+}
+
+body.light .clear{
+    color:#ff0000;
+}
+
+body.light .equal{
+    background:#0aa84f;
+    color:#fff;
+}
+
+.btn:active{
+    transform:scale(0.95);
+}
