@@ -2,6 +2,10 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    user-select: none;
 }
 
 html, body{
@@ -10,7 +14,6 @@ html, body{
     font-family: Arial, sans-serif;
 }
 
-/* Center on desktop */
 body{
     display: flex;
     justify-content: center;
@@ -19,7 +22,6 @@ body{
     transition: background 0.3s ease;
 }
 
-/* Calculator Container */
 .calc{
     width: 100%;
     max-width: 380px;
@@ -34,7 +36,6 @@ body{
     transition: 0.3s ease;
 }
 
-/* Top Bar */
 .topBar{
     display: flex;
     justify-content: space-between;
@@ -42,19 +43,13 @@ body{
     margin-bottom: 15px;
 }
 
-/* Logo Image */
 #cat{
     width: 45px;
     height: 45px;
-    object-fit: cover;
     border-radius: 50%;
     border: 2px solid #ff9500;
-    padding: 3px;
-    box-shadow: 0 0 10px rgba(255,149,0,0.6);
-    transition: 0.3s;
 }
 
-/* Theme Toggle */
 .themeToggle{
     width: 65px;
     height: 35px;
@@ -76,10 +71,8 @@ body{
     align-items: center;
     justify-content: center;
     transition: 0.3s;
-    font-size: 14px;
 }
 
-/* Display */
 #display{
     flex: 1;
     background: transparent;
@@ -89,10 +82,8 @@ body{
     font-size: 42px;
     text-align: right;
     margin-bottom: 20px;
-    transition: 0.3s;
 }
 
-/* Buttons Grid */
 .btnContainer{
     flex: 2;
     display: grid;
@@ -100,77 +91,45 @@ body{
     gap: 15px;
 }
 
-/* Base Button */
 button{
     border: none;
     border-radius: 50%;
     font-size: 22px;
     cursor: pointer;
-    transition: 0.15s ease;
-      
-
+    transition: transform 0.1s ease;
 }
 
 button:active{
-    transform: scale(0.9);
+    transform: scale(0.92);
 }
 
-/* Zero Button */
 .zero{
     grid-column: span 2;
     border-radius: 50px;
 }
 
-/* Number Buttons */
 .num{
     background:#2c2c2c;
     color:white;
 }
 
-/* Operator Buttons */
 .op{
     background:#ff9500;
     color:white;
-    box-shadow: 0 0 8px rgba(255,149,0,0.4);
 }
 
-/* Function Buttons */
 .function{
     background:#5f5f5f;
     color:white;
 }
 
-/* AC PNG Button */
-.iconBtn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.iconBtn img{
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-    pointer-events: none;
-}
-
-/* Hover effect (desktop only) */
-@media (hover:hover){
-    button:hover{
-        opacity: 0.85;
-    }
-}
-
-/* ========================= */
-/* LIGHT THEME */
-/* ========================= */
-
+/* LIGHT MODE */
 body.light{
     background: #f2f2f2;
 }
 
 body.light .calc{
-    background: #ffffff;
+    background: white;
 }
 
 body.light #display{
@@ -187,20 +146,10 @@ body.light .function{
     color: black;
 }
 
-body.light .op{
-    background: #ff9500;
-    color: white;
-}
-
 body.light .themeToggle{
     background: #ddd;
 }
 
 body.light .toggleCircle{
     transform: translateX(30px);
-}
-
-body.light #cat{
-    border: 2px solid #ff9500;
-    box-shadow: 0 0 10px rgba(255,149,0,0.4);
 }
